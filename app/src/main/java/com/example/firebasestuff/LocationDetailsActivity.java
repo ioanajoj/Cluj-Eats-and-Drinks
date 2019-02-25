@@ -2,18 +2,18 @@ package com.example.firebasestuff;
 
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.os.AsyncTask;
 import android.os.Bundle;
-import android.os.Handler;
 import android.text.TextUtils;
-import android.util.Log;
+import android.util.Pair;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -21,7 +21,8 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
-import java.util.concurrent.TimeUnit;
+import java.util.HashMap;
+import java.util.Map;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -45,6 +46,7 @@ public class LocationDetailsActivity extends AppCompatActivity {
     private DatabaseReference locationRef = mRootRef.child("locations");
     private DatabaseReference openHoursRef = mRootRef.child("openHours");
     private DatabaseReference hoursRef = mRootRef.child("hours");
+    private DatabaseReference savedLocationsRef = mRootRef.child("savedLocations");
     private DatabaseReference locationOpenHoursRef;
 
     // Open Hours data
@@ -68,9 +70,8 @@ public class LocationDetailsActivity extends AppCompatActivity {
                 .addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                        String locationKey = "";
                         for(DataSnapshot data : dataSnapshot.getChildren()) {
-                            locationKey = data.getKey();
+                            final String locationKey = data.getKey();
                             mLocation = data.getValue(Location.class);
 
                             locationNameTextView = findViewById(R.id.locationNameTextView);
@@ -84,10 +85,26 @@ public class LocationDetailsActivity extends AppCompatActivity {
                                     circularProgressButton.startAnimation();
 
                                     // DO STUFF
+                                    String uid = mAuth.getUid();
+                                    Map<String, Object> uid_locationID_pair = new HashMap<>();
+                                    uid_locationID_pair.put(uid, locationKey);
+                                    savedLocationsRef.setValue(uid_locationID_pair, new DatabaseReference.CompletionListener() {
+                                        @Override
+                                        public void onComplete(@Nullable DatabaseError databaseError, @NonNull DatabaseReference databaseReference) {
+                                            if (databaseError != null) {
+                                                Bitmap errorIcon = BitmapFactory.decodeResource(getApplicationContext().getResources(),
+                                                        R.drawable.ic_error_black_48dp);
+                                                circularProgressButton.doneLoadingAnimation(1, errorIcon);
+                                            }
+                                            else {
+                                                Bitmap doneIcon = BitmapFactory.decodeResource(getApplicationContext().getResources(),
+                                                        R.drawable.ic_done_black_48dp);
+                                                circularProgressButton.doneLoadingAnimation(1, doneIcon);
+                                            }
+                                        }
+                                    });
 
-                                    Bitmap doneIcon = BitmapFactory.decodeResource(getApplicationContext().getResources(),
-                                            R.drawable.ic_done_black_48dp);
-                                    circularProgressButton.doneLoadingAnimation(1, doneIcon);
+
                                 }
                             });
 
@@ -103,9 +120,15 @@ public class LocationDetailsActivity extends AppCompatActivity {
                                     .load(mLocation.getPhoto())
                                     .apply(requestOptions)
                                     .into(locationImageView);
+
+                            if (locationKey != null) {
+                                locationOpenHoursRef = openHoursRef.child(locationKey);
+                                getOpenHoursIDs();
+                            }
+                            else {
+                                Toast.makeText(getApplicationContext(), "Cum doamne ai ajuns aici", Toast.LENGTH_SHORT).show();
+                            }
                         }
-                        locationOpenHoursRef = openHoursRef.child(locationKey);
-                        getOpenHoursIDs();
                     }
 
                     @Override
