@@ -4,7 +4,6 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.text.TextUtils;
-import android.util.Pair;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -13,7 +12,6 @@ import android.widget.Toast;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -21,8 +19,6 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -41,7 +37,6 @@ public class LocationDetailsActivity extends AppCompatActivity {
 
     // Firebase
     private FirebaseAuth mAuth;
-    private FirebaseDatabase database;
     private DatabaseReference mRootRef = FirebaseDatabase.getInstance().getReference();
     private DatabaseReference locationRef = mRootRef.child("locations");
     private DatabaseReference openHoursRef = mRootRef.child("openHours");
@@ -54,7 +49,7 @@ public class LocationDetailsActivity extends AppCompatActivity {
     private ArrayList<OpenDayTime> openDayTimes = new ArrayList<>();
 
     @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState) {
+    protected void onCreate(@Nullable final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         getSupportActionBar().hide();
         setContentView(R.layout.location_details_fragment);
@@ -64,7 +59,6 @@ public class LocationDetailsActivity extends AppCompatActivity {
 
         // Get Firebase Stuff
         mAuth = FirebaseAuth.getInstance();
-        database = FirebaseDatabase.getInstance();
         locationRef.orderByChild("name")
                 .equalTo(locationName)
                 .addListenerForSingleValueEvent(new ValueEventListener() {
@@ -85,26 +79,7 @@ public class LocationDetailsActivity extends AppCompatActivity {
                                     circularProgressButton.startAnimation();
 
                                     // DO STUFF
-                                    String uid = mAuth.getUid();
-                                    Map<String, Object> uid_locationID_pair = new HashMap<>();
-                                    uid_locationID_pair.put(uid, locationKey);
-                                    savedLocationsRef.setValue(uid_locationID_pair, new DatabaseReference.CompletionListener() {
-                                        @Override
-                                        public void onComplete(@Nullable DatabaseError databaseError, @NonNull DatabaseReference databaseReference) {
-                                            if (databaseError != null) {
-                                                Bitmap errorIcon = BitmapFactory.decodeResource(getApplicationContext().getResources(),
-                                                        R.drawable.ic_error_black_48dp);
-                                                circularProgressButton.doneLoadingAnimation(1, errorIcon);
-                                            }
-                                            else {
-                                                Bitmap doneIcon = BitmapFactory.decodeResource(getApplicationContext().getResources(),
-                                                        R.drawable.ic_done_black_48dp);
-                                                circularProgressButton.doneLoadingAnimation(1, doneIcon);
-                                            }
-                                        }
-                                    });
-
-
+                                    addLocationToFavourites(locationKey);
                                 }
                             });
 
@@ -136,6 +111,26 @@ public class LocationDetailsActivity extends AppCompatActivity {
 
                     }
                 });
+    }
+
+    private void addLocationToFavourites(final String locationKey) {
+        final String uid = mAuth.getUid();
+        DatabaseReference userSavedLocations = savedLocationsRef.child(uid);
+        userSavedLocations.child(locationKey).setValue(true, new DatabaseReference.CompletionListener() {
+            @Override
+            public void onComplete(@Nullable DatabaseError databaseError, @NonNull DatabaseReference databaseReference) {
+                if (databaseError != null) {
+                    Bitmap errorIcon = BitmapFactory.decodeResource(getApplicationContext().getResources(),
+                            R.drawable.ic_error_black_48dp);
+                    circularProgressButton.doneLoadingAnimation(1, errorIcon);
+                }
+                else {
+                    Bitmap doneIcon = BitmapFactory.decodeResource(getApplicationContext().getResources(),
+                            R.drawable.ic_done_black_48dp);
+                    circularProgressButton.doneLoadingAnimation(1, doneIcon);
+                }
+            }
+        });
     }
 
     private void getOpenHoursIDs() {

@@ -21,7 +21,7 @@ allprojects {
         jcenter()
 
         maven {
-            // Morphing Button
+            // Morphing Button + Nested Scroll View
             url "https://jitpack.io"
         }
     }
