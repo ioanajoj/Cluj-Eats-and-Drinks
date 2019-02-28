@@ -1,0 +1,489 @@
+{
+  "locations": {
+    "1": {
+      "name": "Ciao New York",
+      "address": "Strada Avram Iancu Nr 12, Cluj-Napoca 400089",
+      "photo": "https://instagram.fotp3-1.fna.fbcdn.net/vp/93a9737ca5d6c0255754096bd8b4b493/5CE9EFAD/t51.2885-15/e35/50036019_360604554492674_6503731233116232312_n.jpg?_nc_ht=instagram.fotp3-1.fna.fbcdn.net"
+    },
+    "2": {
+      "name": "Eggcetera",
+      "address": "Strada Napoca 13, Cluj-Napoca 400000",
+      "photo": "https://instagram.fotp3-1.fna.fbcdn.net/vp/9d12895ffa6b2c9e0dc0295463689ed6/5D043D49/t51.2885-15/e35/50140766_2105051629556164_8045390094919427843_n.jpg?_nc_ht=instagram.fotp3-1.fna.fbcdn.net"
+    },
+    "3": {
+      "name": "Visuin. Nut(a)house",
+      "address": "Strada Fortaretei 12, Cluj-Napoca 400000",
+      "photo": "https://instagram.fotp3-1.fna.fbcdn.net/vp/ff0a305df740f2aa7a0f7ac6e09d0ec7/5D2440A7/t51.2885-15/e35/51142231_354679732050599_8306095945619812980_n.jpg?_nc_ht=instagram.fotp3-1.fna.fbcdn.net"
+    },
+    "4": {
+      "name": "New York Bagels Cluj",
+      "address": "Strada Emil Isac 2, Cluj-Napoca 400023",
+      "photo": "https://instagram.fotp3-1.fna.fbcdn.net/vp/45f4ff13fecb01c782db30f450e11cb9/5CDF8D93/t51.2885-15/e35/50643983_2101477416594814_7641949530901040900_n.jpg?_nc_ht=instagram.fotp3-1.fna.fbcdn.net"
+    },
+    "5": {
+      "name": "Mozart Cafe",
+      "address": "Strada Cardinal Iuliu Hossu, Cluj Napoca 400029",
+      "photo": "https://instagram.ftsr1-1.fna.fbcdn.net/vp/305791d09184f95be5fc1233f8089c70/5D05B02D/t51.2885-15/e35/28436280_397650647314184_5625434064199614464_n.jpg?_nc_ht=instagram.ftsr1-1.fna.fbcdn.net"
+    },
+    "6": {
+      "name": "Marty Society",
+      "address": "Strada Victor Babe? 39, Cluj-Napoca 400012",
+      "photo": "https://instagram.ftsr1-1.fna.fbcdn.net/vp/0e94a91b43a1df590b1b2e81da7753cc/5D17AE3A/t51.2885-15/e35/25014912_706270582902761_8524216588734300160_n.jpg?_nc_ht=instagram.ftsr1-1.fna.fbcdn.net"
+    },
+    "7": {
+      "name": "Marty City",
+      "address": "Strada Alexandru Vaida Voievod 53, Cluj-Napoca 400436",
+      "photo": "https://instagram.fotp3-1.fna.fbcdn.net/vp/4a286d7ee0d32268d6ad542ee7adc48a/5D01B11C/t51.2885-15/e35/24127200_299956117163321_4126841110435725312_n.jpg?_nc_ht=instagram.fotp3-1.fna.fbcdn.net"
+    },
+    "8": {
+      "name": "Marty Boulevard",
+      "address": "Strada Horea 5, Cluj-Napoca 400174",
+      "photo": "https://instagram.ftsr1-1.fna.fbcdn.net/vp/d03104db8fba7644c1ce995a02753e2a/5D21C287/t51.2885-19/s150x150/14310850_1794993217381066_1160877833_a.jpg?_nc_ht=instagram.ftsr1-1.fna.fbcdn.net"
+    },
+    "9": {
+      "name": "Vorbe",
+      "address": "Strada Georges Clemenceau 3, Cluj-Napoca 400021",
+      "photo": "https://instagram.ftsr1-1.fna.fbcdn.net/vp/15b4045051f38469b02f1520b1ea0b46/5D0D9B9C/t51.2885-15/e35/51809905_614438845676830_361490716177931641_n.jpg?_nc_ht=instagram.ftsr1-1.fna.fbcdn.net"
+    },
+    "10": {
+      "name": "A la Tarte",
+      "address": "Strada Ion I. C. Bratianu 35, Cluj-Napoca 400079",
+      "photo": "https://instagram.ftsr1-1.fna.fbcdn.net/vp/1013fd65e1d76e899e965c25833c8fbb/5D1217F4/t51.2885-15/e35/35616888_2151762571718931_3488848620835307520_n.jpg?_nc_ht=instagram.ftsr1-1.fna.fbcdn.net"
+    }
+  },
+  
+  "hours": {
+    "CiaoM1": {
+      "day": "Monday",
+      "open": "12:00",
+      "close": "15:30"
+    },
+    "CiaoM2": {
+      "day": "Monday",
+      "open": "17:00",
+      "close": "22:30"
+    },
+    "CiaoTu1": {
+      "day": "Tuesday",
+      "open": "12:00",
+      "close": "15:30"
+    },
+    "CiaoTu2": {
+      "day": "Tuesday",
+      "open": "17:00",
+      "close": "22:30"
+    },
+    "CiaoW1": {
+      "day": "Wednesday",
+      "open": "12:00",
+      "close": "15:30"
+    },
+    "CiaoW2": {
+      "day": "Wednesday",
+      "open": "17:00",
+      "close": "22:30"
+    },
+    "CiaoTh1": {
+      "day": "Thursday",
+      "open": "12:00",
+      "close": "15:30"
+    },
+    "CiaoTh2": {
+      "day": "Thursday",
+      "open": "17:00",
+      "close": "22:30"
+    },
+    "CiaoF1": {
+      "day": "Friday",
+      "open": "12:00",
+      "close": "15:30"
+    },
+    "CiaoF2": {
+      "day": "Friday",
+      "open": "17:00",
+      "close": "23:00"
+    },
+    "CiaoSat1": {
+      "day": "Saturday",
+      "open": "12:00",
+      "close": "15:30"
+    },
+    "CiaoSat2": {
+      "day": "Saturday",
+      "open": "17:00",
+      "close": "23:00"
+    },
+    "CiaoSun1": {
+      "day": "Sunday",
+      "open": "12:00",
+      "close": "15:30"
+    },
+    "CiaoSun2": {
+      "day": "Sunday",
+      "open": "17:00",
+      "close": "22:00"
+    },
+    "EggCeTu": {
+      "day": "Tuesday",
+      "open": "08:30",
+      "close": "16:00"
+    },
+    "EggCeW": {
+      "day": "Wednesday",
+      "open": "08:30",
+      "close": "16:00"
+    },
+    "EggCeTh": {
+      "day": "Thursday",
+      "open": "08:30",
+      "close": "16:00"
+    },
+    "EggCeF": {
+      "day": "Friday",
+      "open": "08:30",
+      "close": "16:00"
+    },
+    "EggCeSat": {
+      "day": "Saturday",
+      "open": "09:00",
+      "close": "16:00"
+    },
+    "EggCeSun": {
+      "day": "Sunday",
+      "open": "09:00",
+      "close": "16:00"
+    },
+    "VisuinM": {
+      "day": "Monday",
+      "open": "17:00",
+      "close": "24:00"
+    },
+    "VisuinTu": {
+      "day": "Tuesday",
+      "open": "17:00",
+      "close": "24:00"
+    },
+    "VisuinW": {
+      "day": "Wednesday",
+      "open": "17:00",
+      "close": "24:00"
+    },
+    "VisuinTh": {
+      "day": "Thursday",
+      "open": "17:00",
+      "close": "24:00"
+    },
+    "VisuinF": {
+      "day": "Friday",
+      "open": "17:00",
+      "close": "01:00"
+    },
+    "VisuinSat": {
+      "day": "Saturday",
+      "open": "17:00",
+      "close": "01:00"
+    },
+    "NYBagelsM": {
+      "day": "Monday",
+      "open": "09:00",
+      "close": "17:00"
+    },
+    "NYBagelsTu": {
+      "day": "Tuesday",
+      "open": "09:00",
+      "close": "17:00"
+    },
+    "NYBagelsW": {
+      "day": "Wednesday",
+      "open": "09:00",
+      "close": "17:00"
+    },
+    "NYBagelsTh": {
+      "day": "Thursday",
+      "open": "09:00",
+      "close": "17:00"
+    },
+    "NYBagelsF": {
+      "day": "Friday",
+      "open": "09:00",
+      "close": "17:00"
+    },
+    "MozartMonday": {
+      "day": "Monday",
+      "open": "09:00",
+      "close": "22:00"
+    },
+    "MozartTuesday": {
+      "day": "Tuesday",
+      "open": "09:00",
+      "close": "22:00"
+    },
+    "MozartWednesday": {
+      "day": "Wednesday",
+      "open": "09:00",
+      "close": "22:00"
+    },
+    "MozartThursday": {
+      "day": "Thursday",
+      "open": "09:00",
+      "close": "22:00"
+    },
+    "MozartFriday": {
+      "day": "Friday",
+      "open": "09:00",
+      "close": "22:00"
+    },
+    "MozartSaturday": {
+      "day": "Saturday",
+      "open": "09:00",
+      "close": "22:00"
+    },
+    "MozartSunday": {
+      "day": "Sunday",
+      "open": "09:00",
+      "close": "22:00"
+    },
+    "MartySocMonday": {
+      "day": "Monday",
+      "open": "09:00",
+      "close": "24:00"
+    },
+    "MartySocTuesday": {
+      "day": "Tuesday",
+      "open": "09:00",
+      "close": "24:00"
+    },
+    "MartySocWednesday": {
+      "day": "Wednesday",
+      "open": "09:00",
+      "close": "24:00"
+    },
+    "MartySocThursday": {
+      "day": "Thursday",
+      "open": "09:00",
+      "close": "24:00"
+    },
+    "MartySocFriday": {
+      "day": "Friday",
+      "open": "09:00",
+      "close": "01:00"
+    },
+    "MartySocSaturday": {
+      "day": "Saturday",
+      "open": "11:00",
+      "close": "24:00"
+    },
+    "MartySocSunday": {
+      "day": "Sunday",
+      "open": "11:00",
+      "close": "24:00"
+    },
+    "MartyCityMonday": {
+      "day": "Monday",
+      "open": "10:00",
+      "close": "23:00"
+    },
+    "MartyCityTuesday": {
+      "day": "Tuesday",
+      "open": "10:00",
+      "close": "23:00"
+    },
+    "MartyCityWednesday": {
+      "day": "Wednesday",
+      "open": "10:00",
+      "close": "23:00"
+    },
+    "MartyCityThursday": {
+      "day": "Thursday",
+      "open": "10:00",
+      "close": "23:00"
+    },
+    "MartyCityFriday": {
+      "day": "Friday",
+      "open": "10:00",
+      "close": "23:00"
+    },
+    "MartyCitySaturday": {
+      "day": "Saturday",
+      "open": "10:00",
+      "close": "23:00"
+    },
+    "MartyCitySunday": {
+      "day": "Sunday",
+      "open": "10:00",
+      "close": "23:00"
+    },
+    "VorbeMonday": {
+      "day": "Monday",
+      "open": "10:00",
+      "close": "23:00"
+    },
+    "VorbeTuesday": {
+      "day": "Tuesday",
+      "open": "10:00",
+      "close": "23:00"
+    },
+    "VorbeWednesday": {
+      "day": "Wednesday",
+      "open": "10:00",
+      "close": "23:00"
+    },
+    "VorbeThursday": {
+      "day": "Thursday",
+      "open": "10:00",
+      "close": "23:00"
+    },
+    "VorbeFriday": {
+      "day": "Friday",
+      "open": "10:00",
+      "close": "23:00"
+    },
+    "VorbeSaturday": {
+      "day": "Saturday",
+      "open": "10:00",
+      "close": "23:00"
+    },
+    "VorbeSunday": {
+      "day": "Sunday",
+      "open": "10:00",
+      "close": "23:00"
+    },
+    "ALaTarteMonday": {
+      "day": "Monday",
+      "open": "09:00",
+      "close": "21:00"
+    },
+    "ALaTarteTuesday": {
+      "day": "Tuesday",
+      "open": "09:00",
+      "close": "21:00"
+    },
+    "ALaTarteWednesday": {
+      "day": "Wednesday",
+      "open": "09:00",
+      "close": "21:00"
+    },
+    "ALaTarteThursday": {
+      "day": "Thursday",
+      "open": "09:00",
+      "close": "21:00"
+    },
+    "ALaTarteFriday": {
+      "day": "Friday",
+      "open": "09:00",
+      "close": "21:00"
+    },
+    "ALaTarteSaturday": {
+      "day": "Saturday",
+      "open": "10:00",
+      "close": "19:00"
+    },
+    "ALaTarteSunday": {
+      "day": "Sunday",
+      "open": "10:00",
+      "close": "19:00"
+    }
+  },
+  
+  "openHours": {
+    "1": {
+      "CiaoM1": true,
+      "CiaoM2": true,
+      "CiaoTu1": true,
+      "CiaoTu2": true,
+      "CiaoW1": true,
+      "CiaoW2": true,
+      "CiaoTh1": true,
+      "CiaoTh2": true,
+      "CiaoF1": true,
+      "CiaoF2": true,
+      "CiaoSat1": true,
+      "CiaoSat2": true,
+      "CiaoSun1": true,
+      "CiaoSun2": true
+    },
+    "2": {
+      "EggCeTu": true,
+      "EggCeW": true,
+      "EggCeTh": true,
+      "EggCeF": true,
+      "EggCeSat": true,
+      "EggCeSun": true
+    },
+    "3": {
+      "VisuinM": true,
+      "VisuinTu": true,
+      "VisuinW": true,
+      "VisuinTh": true,
+      "VisuinF": true,
+      "VisuinSat": true
+    },
+    "4": {
+      "NYBagelsM": true,
+      "NYBagelsTu": true,
+      "NYBagelsW": true,
+      "NYBagelsTh": true,
+      "NYBagelsF": true
+    },
+    "5": {
+      "MozartMonday": true,
+      "MozartTuesday": true,
+      "MozartWednesday": true,
+      "MozartThursday": true,
+      "MozartFriday": true,
+      "MozartSaturday": true,
+      "MozartSunday": true
+    },
+    "6": {
+      "MartySocMonday": true,
+      "MartySocTuesday": true,
+      "MartySocWednesday": true,
+      "MartySocThursday": true,
+      "MartySocFriday": true,
+      "MartySocSaturday": true,
+      "MartySocSunday": true
+    },
+    "7": {
+      "MartyCityMonday": true,
+      "MartyCityTuesday": true,
+      "MartyCityWednesday": true,
+      "MartyCityThursday": true,
+      "MartyCityFriday": true,
+      "MartyCitySaturday": true,
+      "MartyCitySunday": true
+    },
+    "9": {
+      "VorbeMonday": true,
+      "VorbeTuesday": true,
+      "VorbeWednesday": true,
+      "VorbeThursday": true,
+      "VorbeFriday": true,
+      "VorbeSaturday": true,
+      "VorbeSunday": true
+    },
+    "10": {
+      "ALaTarteMonday": true,
+      "ALaTarteTuesday": true,
+      "ALaTarteWednesday": true,
+      "ALaTarteThursday": true,
+      "ALaTarteFriday": true,
+      "ALaTarteSaturday": true,
+      "ALaTarteSunday": true
+    }
+  },
+  "food" :{
+    "pizza": {
+      "6": true,
+      "7": true,
+      "8": true
+    },
+    "sweets": {
+      "1": true,
+      "5": true,
+      "6": true,
+      "7": true,
+      "8": true,
+      "10": true
+    }
+  }
+}
