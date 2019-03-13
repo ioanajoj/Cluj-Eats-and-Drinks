@@ -1,10 +1,13 @@
 package com.joj.clujeatsanddrinks.UI;
 
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.net.Uri;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -37,7 +40,6 @@ public class LocationDetailsActivity extends AppCompatActivity {
     private ImageView locationImageView;
     private TextView addressTextView;
     private CircularProgressButton circularProgressButton;
-
 
     // Firebase
     private FirebaseAuth mAuth;
@@ -80,15 +82,12 @@ public class LocationDetailsActivity extends AppCompatActivity {
                                 public void onClick(View v) {
                                     circularProgressButton.startMorphAnimation();
                                     circularProgressButton.startAnimation();
-
-                                    // DO STUFF
                                     addLocationToFavourites(locationKey);
                                 }
                             });
 
                             View locationView = findViewById(R.id.location_imageview);
                             locationView.setTransitionName(getString(R.string.locationImageTransition));
-
 
                             locationNameTextView.setText(mLocation.getName());
                             addressTextView.setText(mLocation.getAddress());
@@ -114,16 +113,28 @@ public class LocationDetailsActivity extends AppCompatActivity {
 
                     }
                 });
+
+        Button openGoogleMaps = findViewById(R.id.open_maps_button);
+        openGoogleMaps.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String location = mLocation.getName();
+                Uri gmmIntentUri = Uri.parse("geo:0,0?q=" + location);
+                Intent mapIntent = new Intent(Intent.ACTION_VIEW, gmmIntentUri);
+                mapIntent.setPackage("com.google.android.apps.maps");
+                startActivity(mapIntent);
+            }
+        });
     }
 
-    @Override
-    public void onBackPressed() {
-        super.onBackPressed();
-//        moveTaskToBack(true);
-    }
-
+    /**
+     * onClick listener of "Add to favourites button"
+     * The key is added to the database
+     * @param locationKey String ID of location
+     */
     private void addLocationToFavourites(final String locationKey) {
         final String uid = mAuth.getUid();
+        assert uid != null;
         DatabaseReference userSavedLocations = savedLocationsRef.child(uid);
         userSavedLocations.child(locationKey).setValue(true, new DatabaseReference.CompletionListener() {
             @Override
@@ -210,12 +221,17 @@ public class LocationDetailsActivity extends AppCompatActivity {
             ArrayList<String> result = getHoursPerDay(name);
             if (result.size() > 1) {
                 String hours = TextUtils.join(" and ", result);
+                assert textView != null;
                 textView.setText(hours);
             }
             else if (result.size() == 1){
+                assert textView != null;
                 textView.setText(result.get(0));
             }
-            else textView.setText("Closed");
+            else {
+                assert textView != null;
+                textView.setText(getString(R.string.location_default_state));
+            }
 
         }
     }

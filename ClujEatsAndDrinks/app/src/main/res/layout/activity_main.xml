@@ -37,7 +37,7 @@
             android:layout_height="wrap_content"
             android:ems="10"
             style="@style/SmolTextStyle"
-            android:hint="Nice meeting you, your name is.."
+            android:hint="@string/enter_name_edit"
             android:inputType="textEmailAddress" />
 
         <EditText
@@ -46,7 +46,7 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="textEmailAddress"
-            android:hint="Email here"
+            android:hint="@string/enter_email_Edit"
             style="@style/SmolTextStyle" />
 
         <EditText
@@ -55,7 +55,7 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="textPassword"
-            android:hint="Password, yea make it longer than 6 pls"
+            android:hint="@string/enter_password_edit"
             style="@style/SmolTextStyle" />
 
         <Button
@@ -64,21 +64,21 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             style="@style/MarginButton"
-            android:text="Login" />
+            android:text="@string/login_button" />
 
         <Button
             android:id="@+id/createAccountButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             style="@style/MarginButton"
-            android:text="Create account"/>
+            android:text="@string/create_account_button"/>
 
         <Button
             android:id="@+id/newHereButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textColor="#424242"
-            android:text="First time here? Create account here."
+            android:text="@string/create_account_switch_button"
             android:textAllCaps="false"
             android:background="@android:color/transparent"
             style="?android:attr/borderlessButtonStyle"/>
@@ -94,6 +94,7 @@
         android:text="Skip ->"
         android:textAllCaps="false"
         android:textColor="#424242"
+        android:visibility="gone"
         android:background="@android:color/transparent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

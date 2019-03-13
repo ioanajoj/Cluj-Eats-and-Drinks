@@ -38,4 +38,12 @@
     <string name="no_saved_locations_label">You don\'t have any saved locations yet!</string>
     <string name="default_userName">Default name</string>
     <string name="save_new_user_name">Save username</string>
+    <string name="location_default_state">Closed</string>
+    <string name="open_google_maps_button">View in Google Maps</string>
+    <string name="enter_name_edit">Nice meeting you, your name is..</string>
+    <string name="enter_email_Edit">Email here</string>
+    <string name="enter_password_edit">Password, yea make it longer than 6 pls</string>
+    <string name="login_button">Login</string>
+    <string name="create_account_button">Create account</string>
+    <string name="create_account_switch_button">First time here? Create account here.</string>
 </resources>

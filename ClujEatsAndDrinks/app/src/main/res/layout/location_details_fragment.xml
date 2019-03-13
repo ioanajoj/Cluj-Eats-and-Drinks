@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@android:color/background_light"
-    tools:context=".UI.LocationDetailsFragment">
+    tools:context=".UI.LocationDetailsActivity">
 
 
     <TextView
@@ -43,9 +43,9 @@
     <ImageView
         android:id="@+id/location_imageview"
         android:layout_width="match_parent"
-        android:layout_height="192dp"
+        android:layout_height="200dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="70dp"
         android:layout_marginEnd="8dp"
         android:contentDescription="@string/location_details_image_description"
         android:scaleType="center"
@@ -56,37 +56,26 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <com.google.android.gms.maps.MapView
-        android:id="@+id/mapView"
-        android:layout_width="343dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
     <TextView
         android:id="@+id/addressTextViewLabel"
+        style="@style/MainTextStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
         android:text="@string/location_detail_address_label"
-        style="@style/MainTextStyle"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/location_imageview" />
 
     <TextView
         android:id="@+id/addressTextView"
+        style="@style/SmolTextStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="20dp"
         android:layout_marginEnd="8dp"
         android:text="@string/location_details_address"
-        style="@style/SmolTextStyle"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/addressTextViewLabel"
         app:layout_constraintTop_toBottomOf="@+id/location_imageview" />
@@ -95,8 +84,8 @@
         android:id="@+id/tableLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
         android:layout_marginStart="20dp"
+        android:layout_marginTop="60dp"
         android:layout_marginEnd="20dp"
         android:shrinkColumns="*"
         android:stretchColumns="*"
@@ -108,94 +97,116 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-            <TextView android:text="@string/location_details_monday"
-                style="@style/SmolTextStyle" />
+            <TextView
+                style="@style/SmolTextStyle"
+                android:text="@string/location_details_monday" />
 
             <TextView
                 android:id="@+id/MondayOpenHours"
-                android:text="@string/location_details_time_monday"
-                style="@style/SmolTextStyle"/>
+                style="@style/SmolTextStyle"
+                android:text="@string/location_details_time_monday" />
         </TableRow>
 
         <TableRow
+            style="@style/SmolTextStyle"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            style="@style/SmolTextStyle">
+            android:layout_height="wrap_content">
 
-            <TextView android:text="@string/location_details_tuesday"
-                style="@style/SmolTextStyle"/>
+            <TextView
+                style="@style/SmolTextStyle"
+                android:text="@string/location_details_tuesday" />
 
             <TextView
                 android:id="@+id/TuesdayOpenHours"
-                android:text="@string/location_details_time_tuesday"
-                style="@style/SmolTextStyle" />
+                style="@style/SmolTextStyle"
+                android:text="@string/location_details_time_tuesday" />
         </TableRow>
 
         <TableRow
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-            <TextView android:text="@string/location_details_wednesday"
-                style="@style/SmolTextStyle" />
+            <TextView
+                style="@style/SmolTextStyle"
+                android:text="@string/location_details_wednesday" />
 
             <TextView
                 android:id="@+id/WednesdayOpenHours"
-                android:text="@string/location_details_time_wednesday"
-                style="@style/SmolTextStyle" />
+                style="@style/SmolTextStyle"
+                android:text="@string/location_details_time_wednesday" />
         </TableRow>
 
         <TableRow
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-            <TextView android:text="@string/location_details_thursday"
-                style="@style/SmolTextStyle" />
+            <TextView
+                style="@style/SmolTextStyle"
+                android:text="@string/location_details_thursday" />
 
             <TextView
                 android:id="@+id/ThursdayOpenHours"
-                android:text="@string/location_details_time_thursday"
-                style="@style/SmolTextStyle" />
+                style="@style/SmolTextStyle"
+                android:text="@string/location_details_time_thursday" />
         </TableRow>
 
         <TableRow
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-            <TextView android:text="@string/location_details_friday"
-                style="@style/SmolTextStyle" />
+            <TextView
+                style="@style/SmolTextStyle"
+                android:text="@string/location_details_friday" />
 
             <TextView
                 android:id="@+id/FridayOpenHours"
-                android:text="@string/location_details_time_friday"
-                style="@style/SmolTextStyle" />
+                style="@style/SmolTextStyle"
+                android:text="@string/location_details_time_friday" />
         </TableRow>
 
         <TableRow
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-            <TextView android:text="@string/location_details_saturday"
-                style="@style/SmolTextStyle" />
+            <TextView
+                style="@style/SmolTextStyle"
+                android:text="@string/location_details_saturday" />
 
             <TextView
                 android:id="@+id/SaturdayOpenHours"
-                android:text="@string/location_details_time_saturday"
-                style="@style/SmolTextStyle" />
+                style="@style/SmolTextStyle"
+                android:text="@string/location_details_time_saturday" />
         </TableRow>
 
         <TableRow
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-            <TextView android:text="@string/location_details_sunday"
-                style="@style/SmolTextStyle" />
+            <TextView
+                style="@style/SmolTextStyle"
+                android:text="@string/location_details_sunday" />
 
             <TextView
                 android:id="@+id/SundayOpenHours"
-                android:text="@string/location_details_time_sunday"
-                style="@style/SmolTextStyle" />
+                style="@style/SmolTextStyle"
+                android:text="@string/location_details_time_sunday" />
         </TableRow>
 
     </TableLayout>
+
+    <Button
+        android:id="@+id/open_maps_button"
+        style="@style/MarginButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="50dp"
+        android:text="@string/open_google_maps_button"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tableLayout" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
