@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mainContraintLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -23,7 +22,8 @@
             android:padding="3dp"
             android:scaleType="fitCenter"
             android:background="@android:color/transparent"
-            android:src="@drawable/ic_account_circle_black_48dp" />
+            android:src="@drawable/ic_account_circle_black_48dp"
+            android:contentDescription="@string/profile_details_button" />
 
         <Space
             android:layout_width="0dp"
@@ -31,13 +31,14 @@
             android:layout_weight="1" />
 
         <ImageButton
-            android:id="@+id/settingsButton"
+            android:id="@+id/exitButton"
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:padding="3dp"
             android:scaleType="fitCenter"
             android:background="@android:color/transparent"
-            android:src="@drawable/ic_settings_black_48dp" />
+            android:src="@drawable/ic_exit_to_app_black_48dp"
+            android:contentDescription="@string/log_out_button" />
 
     </LinearLayout>
 
@@ -59,43 +60,46 @@
             android:id="@+id/foodTextView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="10dp"
-            android:text="What do yout want to eat?"
-            android:textSize="20sp" />
+            style="@style/MainTextStyle"
+            android:padding="15dp"
+            android:text="@string/first_question" />
 
         <Spinner
             android:id="@+id/foodSpinner"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginHorizontal="20dp" />
+            android:layout_marginHorizontal="20dp"
+            android:spinnerMode="dropdown" />
 
         <TextView
             android:id="@+id/dayTextView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="10dp"
-            android:text="Today? Yesterday? Everyday?"
-            android:textSize="20sp" />
+            style="@style/MainTextStyle"
+            android:padding="15dp"
+            android:text="@string/second_question"/>
 
         <Spinner
             android:id="@+id/daysSpinner"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginHorizontal="20dp" />
+            android:layout_marginHorizontal="20dp"
+            android:spinnerMode="dialog" />
 
         <TextView
             android:id="@+id/timeTextView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="10dp"
-            android:text="At what time do you plan to go get something tasty?"
-            android:textSize="20sp" />
+            style="@style/MainTextStyle"
+            android:padding="15dp"
+            android:text="@string/third_question" />
 
         <Spinner
             android:id="@+id/timeSpinner"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginHorizontal="20dp" />
+            android:layout_marginHorizontal="20dp"
+            android:spinnerMode="dialog" />
 
     </LinearLayout>
 
@@ -108,21 +112,23 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent">
 
-        <Button style="?android:attr/borderlessButtonStyle"
+        <Button
             android:id="@+id/noFilterButton"
+            style="@style/BorderlessButtonWithStyle"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:background="@drawable/customborder"
-            android:text="View all locations" />
+            android:text="@string/left_button_text" />
 
-        <Button style="?android:attr/borderlessButtonStyle"
+        <Button
             android:id="@+id/magicButton"
+            style="@style/BorderlessButtonWithStyle"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:background="@drawable/customborder"
-            android:text="Filter locations" />
+            android:text="@string/right_button_text" />
 
     </LinearLayout>
 

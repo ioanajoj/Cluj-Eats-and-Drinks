@@ -484,6 +484,32 @@
       "7": true,
       "8": true,
       "10": true
+    },
+    "pasta": {
+      "1": true,
+      "7": true,
+      "8": true
+    },
+    "breakfast": {
+      "2": true
     }
+  },
+  "savedLocations" : {
+  "K8TKOmNwnUWlnHVclOo18XCfHXg2" : {
+    "2" : true,
+    "5" : true
+  },
+  "Nli3x0LHU3cKIXiPzKEyhrZHSRl2" : [ null, true, null, null, true, true ],
+  "QQPgs6yBE4YnmN34RU3OllQ8fB62" : {
+    "2" : true,
+    "5" : true
+  },
+  "XydvIPf9jUg5X5uCvpYYpmNQMcS2" : {
+    "5" : true,
+    "9" : true
+  },
+  "ZgbK4kf27ZaWreQwnndsYF7mvNr2" : {
+    "4" : true
   }
+}
 }

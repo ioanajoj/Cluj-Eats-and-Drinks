@@ -1,8 +1,8 @@
 <component name="libraryTable">
   <library name="Gradle: com.github.eddydn:AdvancedNestedScrollView:1.1@aar">
     <CLASSES>
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/jetified-AdvancedNestedScrollView-1.1.aar/273209e9669f6c97d2f21e2c950769ff/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/jetified-AdvancedNestedScrollView-1.1.aar/273209e9669f6c97d2f21e2c950769ff/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/jetified-AdvancedNestedScrollView-1.1.aar/def55f83f92e2c84df3060c940fd4f45/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/jetified-AdvancedNestedScrollView-1.1.aar/def55f83f92e2c84df3060c940fd4f45/jars/classes.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />

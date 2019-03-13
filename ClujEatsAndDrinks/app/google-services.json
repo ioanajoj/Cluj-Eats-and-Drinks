@@ -10,7 +10,7 @@
       "client_info": {
         "mobilesdk_app_id": "1:297484931273:android:f8e9d1009557f526",
         "android_client_info": {
-          "package_name": "com.example.firebasestuff"
+          "package_name": "com.joj.clujeatsanddrinks"
         }
       },
       "oauth_client": [
@@ -18,7 +18,7 @@
           "client_id": "297484931273-p4jp9hdcvk1e6fbp6kiot4qhtef8tag7.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "com.example.firebasestuff",
+            "package_name": "com.joj.clujeatsanddrinks",
             "certificate_hash": "c477810ce622cde02c57f19ee550c3b21cbeba62"
           }
         },

@@ -1,7 +1,41 @@
 <resources>
     <string name="app_name">Cluj Eats and Drinks</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="locationImageTransition">imageTransition</string>
+    <string name="userprofilepicture">userProfilePicture</string>
+    <string name="no_result_text">Sorry, nothing found</string>
+    <string name="result_text">So here\'s where you can eat :)</string>
+    <string name="location_smallview_second_textview">Location Address</string>
+    <string name="locations_smallview_first_textview">Location Name</string>
+    <string name="location_details_name">Location Name</string>
+    <string name="location_details_button_text">Save to favourites</string>
+    <string name="location_details_image_description">Image for each location, is set programmatically</string>
+    <string name="location_detail_address_label">Address:</string>
+    <string name="location_details_address">Location Address</string>
+    <string name="location_details_monday">Monday</string>
+    <string name="location_details_tuesday">Tuesday</string>
+    <string name="location_details_wednesday">Wednesday</string>
+    <string name="location_details_thursday">Thursday</string>
+    <string name="location_details_friday">Friday</string>
+    <string name="location_details_saturday">Saturday</string>
+    <string name="location_details_sunday">Sunday</string>
+    <string name="location_details_time_monday">Closed</string>
+    <string name="location_details_time_tuesday">Closed</string>
+    <string name="location_details_time_wednesday">Closed</string>
+    <string name="location_details_time_thursday">Closed</string>
+    <string name="location_details_time_friday">Closed</string>
+    <string name="location_details_time_saturday">Closed</string>
+    <string name="location_details_time_sunday">Closed</string>
+    <string name="log_out_button">Log out button</string>
+    <string name="profile_details_button">Profile details button</string>
+    <string name="first_question">What do yout want to eat?</string>
+    <string name="second_question">Today? Yesterday? Everyday?</string>
+    <string name="third_question">At what time do you plan to go get something tasty?</string>
+    <string name="left_button_text">View all locations</string>
+    <string name="right_button_text">Filter locations</string>
+    <string name="saved_places_label">Your saved places</string>
+    <string name="no_saved_locations_label">You don\'t have any saved locations yet!</string>
+    <string name="default_userName">Default name</string>
+    <string name="save_new_user_name">Save username</string>
 </resources>
