@@ -33,8 +33,6 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test:runner:1.1.2-alpha02'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0-alpha02'
-
-    // Firebase
     implementation files('libs/firebase-client-android-2.5.2.jar')
 
     // RecyclerView
@@ -48,23 +46,10 @@ dependencies {
     annotationProcessor 'com.github.bumptech.glide:compiler:4.9.0'
     implementation 'com.google.android.gms:play-services-maps:16.1.0'
 
-    // SweetSheet from https://github.com/zzz40500/AndroidSweetSheet
-    implementation 'com.github.zzz40500:AndroidSweetSheet:1.1.0'
-
-    // Transition Everything from https://github.com/andkulikov/Transitions-Everywhere
-    implementation "com.andkulikov:transitionseverywhere:2.0.0-alpha01"
-
     implementation 'com.android.support:support-v4:28.0.0'
-
-    // Morphing Button from https://github.com/dmytrodanylyk/android-morphing-button
-    implementation 'br.com.simplepass:loading-button-android:2.0.7'
 
     // Progress Button from https://github.com/dmytrodanylyk/circular-progress-button/wiki/User-Guide
     implementation 'com.github.dmytrodanylyk.circular-progress-button:library:1.1.3'
-
-    // Nested Scroll View with RecyclerView from https://www.androiddesignpatterns.com/2018/01/experimenting-with-nested-scrolling.html
-    implementation 'com.github.eddydn:AdvancedNestedScrollView:1.1'
-    implementation 'com.android.support:design:28.0.0'
 }
 
 apply plugin: 'com.google.gms.google-services'
