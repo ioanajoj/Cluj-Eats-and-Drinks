@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Bundle;
+import android.text.InputType;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -183,6 +184,7 @@ public class ProfileDetailsActivity extends AppCompatActivity {
         // create dialog for changing display name
         displayNameEditText = new EditText(this);
         displayNameEditText.setHint("Enter new display name");
+        displayNameEditText.setInputType(InputType.TYPE_TEXT_FLAG_CAP_SENTENCES);
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setTitle("Change your display name")
                 .setView(displayNameEditText)
@@ -345,7 +347,6 @@ public class ProfileDetailsActivity extends AppCompatActivity {
             UserProfileChangeRequest profile = new UserProfileChangeRequest.Builder()
                     .setPhotoUri(Uri.parse(profileImageUrl))
                     .build();
-            Toast.makeText(getApplicationContext(), user + " " + profileImageUrl, Toast.LENGTH_SHORT).show();
             user.updateProfile(profile)
                     .addOnCompleteListener(new OnCompleteListener<Void>() {
                         @Override
