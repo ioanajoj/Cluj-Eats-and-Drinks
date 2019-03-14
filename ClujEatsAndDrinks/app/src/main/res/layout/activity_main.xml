@@ -4,84 +4,77 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/login_background"
+    android:screenOrientation="portrait"
     tools:context=".MainActivity">
-
-    <ImageView
-        android:id="@+id/helloWorldLabel"
-        android:layout_width="match_parent"
-        android:layout_height="100dp"
-        android:layout_marginTop="100dp"
-        android:src="@drawable/app_logo"
-        android:adjustViewBounds="true"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
     <LinearLayout
         android:id="@+id/transitions_container"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginHorizontal="30dp"
+        android:layout_marginTop="250dp"
         android:gravity="center_horizontal"
         android:orientation="vertical"
-        android:layout_marginHorizontal="30dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/helloWorldLabel"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.424">
 
         <EditText
             android:id="@+id/nameField"
+            style="@style/SmolTextStyle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            style="@style/SmolTextStyle"
+            android:fontFamily="@font/poppins_semibold"
             android:hint="@string/enter_name_edit"
             android:inputType="textEmailAddress" />
 
         <EditText
             android:id="@+id/fieldEmail"
+            style="@style/SmolTextStyle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:inputType="textEmailAddress"
             android:hint="@string/enter_email_Edit"
-            style="@style/SmolTextStyle" />
+            android:inputType="textEmailAddress" />
 
         <EditText
             android:id="@+id/fieldPassword"
+            style="@style/SmolTextStyle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:inputType="textPassword"
             android:hint="@string/enter_password_edit"
-            style="@style/SmolTextStyle" />
+            android:inputType="textPassword" />
 
         <Button
             android:id="@+id/loginButton"
+            style="@style/MarginButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            style="@style/MarginButton"
             android:text="@string/login_button" />
 
         <Button
             android:id="@+id/createAccountButton"
+            style="@style/MarginButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            style="@style/MarginButton"
-            android:text="@string/create_account_button"/>
+            android:text="@string/create_account_button" />
 
         <Button
             android:id="@+id/newHereButton"
+            style="@style/BorderlessButtonWithStyle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textColor="#424242"
+            android:background="@android:color/transparent"
             android:text="@string/create_account_switch_button"
             android:textAllCaps="false"
-            android:background="@android:color/transparent"
-            style="?android:attr/borderlessButtonStyle"/>
+            android:textColor="#DFD7D7" />
 
     </LinearLayout>
 

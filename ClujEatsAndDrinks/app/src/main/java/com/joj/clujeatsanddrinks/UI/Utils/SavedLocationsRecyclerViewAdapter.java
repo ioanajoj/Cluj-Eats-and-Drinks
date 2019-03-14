@@ -4,8 +4,6 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
-import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
@@ -14,7 +12,6 @@ import com.joj.clujeatsanddrinks.R;
 
 import java.util.List;
 
-import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 public class SavedLocationsRecyclerViewAdapter extends RecyclerView.Adapter<LocationsRecyclerViewAdapter.MyViewHolder> {
@@ -23,37 +20,8 @@ public class SavedLocationsRecyclerViewAdapter extends RecyclerView.Adapter<Loca
     private Context mContext;
     private LocationsRecyclerViewAdapter.OnItemClickListener mListener;
 
-    public interface OnItemClickListener {
-        void onItemCLick(int position);
-    }
-
     public void setOnItemClickListener(LocationsRecyclerViewAdapter.OnItemClickListener listener) {
         mListener = listener;
-    }
-
-    public static class MyViewHolder extends RecyclerView.ViewHolder {
-        public TextView name;
-        public TextView address;
-        public ImageView image;
-
-        public MyViewHolder(@NonNull View itemView, final LocationsRecyclerViewAdapter.OnItemClickListener listener) {
-            super(itemView);
-            name = itemView.findViewById(R.id.location_name);
-            address = itemView.findViewById(R.id.location_address);
-            image = itemView.findViewById(R.id.location_imageview);
-
-            itemView.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    if(listener != null) {
-                        int position = getAdapterPosition();
-                        if(position != RecyclerView.NO_POSITION) {
-                            listener.onItemCLick(position);
-                        }
-                    }
-                }
-            });
-        }
     }
 
     public SavedLocationsRecyclerViewAdapter(Context context, List<Location> locations) {

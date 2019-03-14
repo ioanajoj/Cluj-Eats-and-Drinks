@@ -12,7 +12,6 @@ import android.util.Log;
 import android.view.View;
 import android.widget.ProgressBar;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.joj.clujeatsanddrinks.Model.Choice;
 import com.joj.clujeatsanddrinks.Model.Location;
@@ -98,8 +97,6 @@ public class WelcomeActivity extends AppCompatActivity {
         locationsRecyclerViewAdapter.setOnItemClickListener(new LocationsRecyclerViewAdapter.OnItemClickListener() {
             @Override
             public void onItemCLick(int position) {
-                Toast.makeText(getApplicationContext(), finalLocations.get(position).toString(), Toast.LENGTH_SHORT).show();
-                // This works !
                 Intent mIntent = new Intent(WelcomeActivity.this, LocationDetailsActivity.class);
                 Bundle mBundle = new Bundle();
                 mBundle.putString("Location Name", finalLocations.get(position).getName());

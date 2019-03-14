@@ -9,7 +9,7 @@
         android:layout_width="match_parent"
         android:layout_height="100dp"
         android:orientation="vertical"
-        android:background="@color/colorPrimary"
+        android:background="@drawable/landscape_profile"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"/>
@@ -24,27 +24,30 @@
         app:layout_constraintBottom_toBottomOf="@+id/backLinearLayout"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/backLinearLayout"
-        app:srcCompat="@drawable/ic_account_circle_black_48dp"
+        app:srcCompat="@drawable/profile_icon"
         android:contentDescription="@string/userprofilepicture" />
 
     <TextView
         android:id="@+id/nameTextView"
+        style="@style/MainTextStyleDark"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        style="@style/MainTextStyle"
+        android:layout_marginTop="8dp"
         android:text="@string/default_userName"
-        app:layout_constraintBottom_toBottomOf="@+id/backLinearLayout"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/profileImageView" />
+        app:layout_constraintStart_toEndOf="@+id/profileImageView"
+        app:layout_constraintTop_toBottomOf="@+id/backLinearLayout" />
 
     <TextView
         android:id="@+id/savedTextView"
+        style="@style/MainTextStyleDark"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        style="@style/MainTextStyle"
-        android:layout_marginStart="50dp"
-        android:layout_marginTop="35dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="8dp"
         android:text="@string/saved_places_label"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/profileImageView" />
 
@@ -59,25 +62,13 @@
         app:layout_constraintStart_toStartOf="@+id/profileImageView"
         app:layout_constraintTop_toTopOf="@+id/profileImageView" />
 
-    <Button
-        android:id="@+id/saveImageButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:text="@string/save_new_user_name"
-        android:visibility="gone"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        style="?android:attr/borderlessButtonStyle"/>
-
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/savedLocationsRecyclerView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="5dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
         android:scrollbars="horizontal"

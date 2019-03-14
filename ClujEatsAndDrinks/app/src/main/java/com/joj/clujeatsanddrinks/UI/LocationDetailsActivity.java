@@ -7,7 +7,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
-import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -114,7 +114,7 @@ public class LocationDetailsActivity extends AppCompatActivity {
                     }
                 });
 
-        Button openGoogleMaps = findViewById(R.id.open_maps_button);
+        ImageButton openGoogleMaps = findViewById(R.id.open_maps_button);
         openGoogleMaps.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -232,7 +232,6 @@ public class LocationDetailsActivity extends AppCompatActivity {
                 assert textView != null;
                 textView.setText(getString(R.string.location_default_state));
             }
-
         }
     }
 }

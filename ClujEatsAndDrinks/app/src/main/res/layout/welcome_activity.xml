@@ -4,6 +4,7 @@
     android:id="@+id/constraintLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/choose_background"
     android:orientation="vertical">
 
     <TextView
@@ -16,7 +17,7 @@
         android:gravity="center_horizontal"
         android:padding="10dp"
         android:text="@string/result_text"
-        style="@style/MainTextStyle"
+        style="@style/MainTextStyleDark"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

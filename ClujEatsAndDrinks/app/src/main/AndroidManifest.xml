@@ -19,10 +19,14 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.joj.clujeatsanddrinks.UI.ChooseActivity"/>
-        <activity android:name="com.joj.clujeatsanddrinks.UI.WelcomeActivity"/>
-        <activity android:name="com.joj.clujeatsanddrinks.UI.LocationDetailsActivity"/>
-        <activity android:name="com.joj.clujeatsanddrinks.UI.ProfileDetailsActivity"/>
+        <activity android:name="com.joj.clujeatsanddrinks.UI.ChooseActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name="com.joj.clujeatsanddrinks.UI.WelcomeActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name="com.joj.clujeatsanddrinks.UI.LocationDetailsActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name="com.joj.clujeatsanddrinks.UI.ProfileDetailsActivity"
+            android:screenOrientation="portrait"/>
 
         <meta-data
             android:name="preloaded_fonts"

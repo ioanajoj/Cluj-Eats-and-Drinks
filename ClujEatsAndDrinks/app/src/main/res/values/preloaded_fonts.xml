@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <array name="preloaded_fonts" translatable="false">
+        <item>@font/poppins_semibold</item>
+        <item>@font/yanone_kaffeesatz_extralight</item>
         <item>@font/yanone_kaffeesatz_light</item>
     </array>
 </resources>

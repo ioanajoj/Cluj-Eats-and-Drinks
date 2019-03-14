@@ -13,7 +13,6 @@ import android.widget.Spinner;
 import com.joj.clujeatsanddrinks.MainActivity;
 import com.joj.clujeatsanddrinks.R;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.database.FirebaseDatabase;
 
 import androidx.annotation.Nullable;
 import androidx.annotation.RequiresApi;
@@ -21,10 +20,8 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class ChooseActivity extends AppCompatActivity {
-
     // Firebase
     private FirebaseAuth mAuth;
-    FirebaseDatabase database;
 
     // Widgets
     private Spinner foodSpinner;
@@ -37,7 +34,6 @@ public class ChooseActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.choose_activity);
         mAuth = FirebaseAuth.getInstance();
-        database = FirebaseDatabase.getInstance();
 
         // Widgets
         ImageButton profileButton = findViewById(R.id.profileButton);
@@ -47,15 +43,15 @@ public class ChooseActivity extends AppCompatActivity {
 
         // Set spinner adapters
         ArrayAdapter<CharSequence> food_adapter = ArrayAdapter.createFromResource(this,
-                R.array.food_types, android.R.layout.simple_spinner_item);
+                R.array.food_types, R.layout.spinner_item);
         food_adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         foodSpinner.setAdapter(food_adapter);
         ArrayAdapter<CharSequence> days_adapter = ArrayAdapter.createFromResource(this,
-                R.array.days_of_week, android.R.layout.simple_spinner_item);
+                R.array.days_of_week, R.layout.spinner_item);
         days_adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         daysOfWeekSpinner.setAdapter(days_adapter);
         ArrayAdapter<CharSequence> time_adapter = ArrayAdapter.createFromResource(this,
-                R.array.time_of_day, android.R.layout.simple_spinner_item);
+                R.array.time_of_day, R.layout.spinner_item);
         time_adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         timeOfDaySpinner.setAdapter(time_adapter);
 
@@ -64,26 +60,15 @@ public class ChooseActivity extends AppCompatActivity {
         exitButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mAuth.signOut();
-                Intent intent = new Intent(ChooseActivity.this, MainActivity.class);
-                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
-                startActivity(intent);
-                finish();
+                onLogOutPressed();
             }
         });
 
-        Button noFilterButton = findViewById(R.id.noFilterButton);
+        final Button noFilterButton = findViewById(R.id.noFilterButton);
         noFilterButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent mIntent = new Intent(ChooseActivity.this, WelcomeActivity.class);
-                Bundle mBundle = new Bundle();
-                mBundle.putString("Food", "anything");
-                mBundle.putString("Day", "anytime");
-                mBundle.putString("Time", "anytime");
-
-                mIntent.putExtras(mBundle);
-                startActivity(mIntent);
+                noFilterPressed();
             }
         });
 
@@ -91,29 +76,71 @@ public class ChooseActivity extends AppCompatActivity {
         filterButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Get values
-                String food = foodSpinner.getSelectedItem().toString();
-                String day = daysOfWeekSpinner.getSelectedItem().toString();
-                String time = timeOfDaySpinner.getSelectedItem().toString();
-
-                Intent mIntent = new Intent(ChooseActivity.this, WelcomeActivity.class);
-                Bundle mBundle = new Bundle();
-                mBundle.putString("Food", food);
-                mBundle.putString("Day", day);
-                mBundle.putString("Time", time);
-
-                mIntent.putExtras(mBundle);
-                startActivity(mIntent);
+                filterPressed();
             }
         });
 
         profileButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-               Intent intent = new Intent(ChooseActivity.this, ProfileDetailsActivity.class);
-               startActivity(intent);
+               enterProfile();
             }
         });
+    }
+
+    private void onLogOutPressed() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("Are you sure you want to log out?")
+                .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        mAuth.signOut();
+                        Intent intent = new Intent(ChooseActivity.this, MainActivity.class);
+                        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
+                        startActivity(intent);
+                        finish();
+                        dialog.dismiss();
+                    }
+                })
+                .setNegativeButton("No", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.dismiss();
+                    }
+                });
+        builder.create().show();
+    }
+
+    private void noFilterPressed() {
+        Intent mIntent = new Intent(ChooseActivity.this, WelcomeActivity.class);
+        Bundle mBundle = new Bundle();
+        mBundle.putString("Food", "anything");
+        mBundle.putString("Day", "anytime");
+        mBundle.putString("Time", "anytime");
+
+        mIntent.putExtras(mBundle);
+        startActivity(mIntent);
+    }
+
+    private void filterPressed() {
+        // Get values
+        String food = foodSpinner.getSelectedItem().toString();
+        String day = daysOfWeekSpinner.getSelectedItem().toString();
+        String time = timeOfDaySpinner.getSelectedItem().toString();
+
+        Intent mIntent = new Intent(ChooseActivity.this, WelcomeActivity.class);
+        Bundle mBundle = new Bundle();
+        mBundle.putString("Food", food);
+        mBundle.putString("Day", day);
+        mBundle.putString("Time", time);
+
+        mIntent.putExtras(mBundle);
+        startActivity(mIntent);
+    }
+
+    private void enterProfile() {
+        Intent intent = new Intent(ChooseActivity.this, ProfileDetailsActivity.class);
+        startActivity(intent);
     }
 
     @Override

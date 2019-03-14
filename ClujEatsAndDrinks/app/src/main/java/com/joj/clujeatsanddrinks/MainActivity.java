@@ -9,7 +9,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.joj.clujeatsanddrinks.UI.ChooseActivity;
@@ -32,7 +31,6 @@ public class MainActivity extends AppCompatActivity {
     private FirebaseAuth mAuth;
 
     // Widgets
-    private ImageView logo;
     private EditText nameField;
     private EditText emailField;
     private EditText passwordField;
@@ -59,8 +57,6 @@ public class MainActivity extends AppCompatActivity {
         logInButton = findViewById(R.id.loginButton);
         newHereButton = findViewById(R.id.newHereButton);
         createAccountButton = findViewById(R.id.createAccountButton);
-        logo = findViewById(R.id.helloWorldLabel);
-
 
         // Set Visibility
         nameField.setVisibility(View.GONE);
@@ -125,52 +121,37 @@ public class MainActivity extends AppCompatActivity {
                                     .setDisplayName(name)
                                     .build();
                             user.updateProfile(profile);
-//                            usersRef.child(user.getUid()).child("name").setValue(name);
                             loginUser(email, password);
                         } else {
                             Log.w(TAG, "createUserWithEmail:fail");
                             Toast.makeText(getApplicationContext(), task.getException().getMessage(), Toast.LENGTH_SHORT).show();
-                            updateUI();
                         }
                     }
                 });
     }
 
     private void loginUser(String email, String password) {
+        if(email.equals("") || password.equals("")) {
+            Toast.makeText(MainActivity.this, "You have to enter something",
+                    Toast.LENGTH_SHORT).show();
+            return;
+        }
         mAuth.signInWithEmailAndPassword(email, password)
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
                             Log.d(TAG, "signInWithEmail:success");
-//                            FirebaseUser user = mAuth.getCurrentUser();
-                            Toast.makeText(MainActivity.this, "Successful login",
-                                    Toast.LENGTH_SHORT).show();
-//                            updateUI(user);
                             startWelcome();
                         }
                         else {
                             Log.w(TAG, "signInWithEmail:failure", task.getException());
-                            Toast.makeText(MainActivity.this, task.getException().toString(),
-                                    Toast.LENGTH_SHORT).show();
-                            updateUI();
+                            Toast.makeText(MainActivity.this, "Failed to connect. \n" +
+                                            "If you don't have an account, please create one!",
+                                    Toast.LENGTH_LONG).show();
                         }
                     }
                 });
-    }
-
-    private void updateUI() {
-//        TextView helloText = findViewById(R.id.helloWorldLabel);
-
-//        if (user != null) {
-//            String userEmail = user.getEmail();
-//            helloText.setText("Hello, " + userEmail);
-//            startWelcome();
-//        }
-//        else {
-//            helloText.setText("Hello, there!");
-//        }
-        logo.setImageResource(R.drawable.capture);
     }
 
     private void startWelcome() {

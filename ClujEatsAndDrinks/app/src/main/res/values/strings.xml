@@ -1,7 +1,6 @@
 <resources>
     <string name="app_name">Cluj Eats and Drinks</string>
 
-    <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="locationImageTransition">imageTransition</string>
     <string name="userprofilepicture">userProfilePicture</string>
     <string name="no_result_text">Sorry, nothing found</string>
@@ -29,7 +28,7 @@
     <string name="location_details_time_sunday">Closed</string>
     <string name="log_out_button">Log out button</string>
     <string name="profile_details_button">Profile details button</string>
-    <string name="first_question">What do yout want to eat?</string>
+    <string name="first_question">What do you want to eat?</string>
     <string name="second_question">Today? Yesterday? Everyday?</string>
     <string name="third_question">At what time do you plan to go get something tasty?</string>
     <string name="left_button_text">View all locations</string>
@@ -37,9 +36,7 @@
     <string name="saved_places_label">Your saved places</string>
     <string name="no_saved_locations_label">You don\'t have any saved locations yet!</string>
     <string name="default_userName">Default name</string>
-    <string name="save_new_user_name">Save username</string>
     <string name="location_default_state">Closed</string>
-    <string name="open_google_maps_button">View in Google Maps</string>
     <string name="enter_name_edit">Nice meeting you, your name is..</string>
     <string name="enter_email_Edit">Email here</string>
     <string name="enter_password_edit">Password, yea make it longer than 6 pls</string>

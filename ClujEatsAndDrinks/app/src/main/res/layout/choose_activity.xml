@@ -4,6 +4,8 @@
     android:id="@+id/mainContraintLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/choose_background"
+    android:screenOrientation="portrait"
     android:orientation="vertical">
 
     <LinearLayout
@@ -16,6 +18,22 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <ImageButton
+            android:id="@+id/exitButton"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:padding="3dp"
+            android:scaleType="fitCenter"
+            android:background="@android:color/transparent"
+            android:src="@drawable/ic_exit_to_app_black_48dp"
+            android:contentDescription="@string/log_out_button" />
+
+        <Space
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+
+
+        <ImageButton
             android:id="@+id/profileButton"
             android:layout_width="40dp"
             android:layout_height="40dp"
@@ -25,20 +43,6 @@
             android:src="@drawable/ic_account_circle_black_48dp"
             android:contentDescription="@string/profile_details_button" />
 
-        <Space
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_weight="1" />
-
-        <ImageButton
-            android:id="@+id/exitButton"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:padding="3dp"
-            android:scaleType="fitCenter"
-            android:background="@android:color/transparent"
-            android:src="@drawable/ic_exit_to_app_black_48dp"
-            android:contentDescription="@string/log_out_button" />
 
     </LinearLayout>
 
@@ -69,6 +73,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="20dp"
+            style="@style/SmolTextStyle"
             android:spinnerMode="dialog" />
 
         <TextView

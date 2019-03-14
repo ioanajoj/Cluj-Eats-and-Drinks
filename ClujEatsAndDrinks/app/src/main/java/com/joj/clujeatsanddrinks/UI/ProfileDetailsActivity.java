@@ -6,7 +6,6 @@ import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
@@ -64,7 +63,6 @@ public class ProfileDetailsActivity extends AppCompatActivity {
     private RecyclerView mRecyclerView;
     private EditText displayNameEditText;
     private ProgressBar imageProgressBar;
-    private Button saveButton;
 
     // Variables
     private ArrayList<Location> savedLocations = new ArrayList<>();
@@ -90,7 +88,6 @@ public class ProfileDetailsActivity extends AppCompatActivity {
         profileImageView = findViewById(R.id.profileImageView);
         mRecyclerView = findViewById(R.id.savedLocationsRecyclerView);
         imageProgressBar = findViewById(R.id.imageProgressBar);
-        saveButton = findViewById(R.id.saveImageButton);
 
         initRecyclerView();
         setListeners();
@@ -175,7 +172,6 @@ public class ProfileDetailsActivity extends AppCompatActivity {
         locationsRecyclerViewAdapter.setOnItemClickListener(new LocationsRecyclerViewAdapter.OnItemClickListener() {
             @Override
             public void onItemCLick(int position) {
-                Toast.makeText(getApplicationContext(), savedLocations.get(position).toString(), Toast.LENGTH_SHORT).show();
                 Intent mIntent = new Intent(ProfileDetailsActivity.this, LocationDetailsActivity.class);
                 Bundle mBundle = new Bundle();
                 mBundle.putString("Location Name", savedLocations.get(position).getName());
@@ -232,14 +228,6 @@ public class ProfileDetailsActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 showImageChooser();
-            }
-        });
-
-        // save profile image
-        saveButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                saveUserInformation();
             }
         });
     }
@@ -335,11 +323,10 @@ public class ProfileDetailsActivity extends AppCompatActivity {
                         if (downloadUri != null) {
                             profileImageUrl = downloadUri.toString();
                             Toast.makeText(getApplicationContext(), "Successfully uploaded", Toast.LENGTH_SHORT).show();
-                            saveButton.setVisibility(View.VISIBLE);
+                            saveUserInformation();
                         }
                         imageProgressBar.setVisibility(View.GONE);
                     } else {
-                        // Handle failures
                         Toast.makeText(getApplicationContext(), "Fail", Toast.LENGTH_SHORT).show();
                         imageProgressBar.setVisibility(View.GONE);
                     }
@@ -363,14 +350,10 @@ public class ProfileDetailsActivity extends AppCompatActivity {
                     .addOnCompleteListener(new OnCompleteListener<Void>() {
                         @Override
                         public void onComplete(@NonNull Task<Void> task) {
-                            if(task.isSuccessful()) {
+                            if(task.isSuccessful())
                                 Toast.makeText(getApplicationContext(), "Profile updated successfully", Toast.LENGTH_SHORT).show();
-                                saveButton.setVisibility(View.GONE);
-                            }
-                            else {
+                            else
                                 Toast.makeText(getApplicationContext(), "Profile update fail", Toast.LENGTH_SHORT).show();
-                                saveButton.setVisibility(View.GONE);
-                            }
                         }
                     });
         }

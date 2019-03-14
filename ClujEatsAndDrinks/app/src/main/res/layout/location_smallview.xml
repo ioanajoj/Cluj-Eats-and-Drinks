@@ -4,6 +4,8 @@
     android:id="@+id/smallViewLayout"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:background="@drawable/location_smallview_shape"
+    android:layout_margin="5dp"
     android:orientation="vertical">
 
     <ImageView
@@ -13,31 +15,33 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:transitionName="@string/locationImageTransition"
+        android:padding="10dp"
+        android:scaleType="fitCenter"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/ic_photo_black_48dp" />
 
     <TextView
         android:id="@+id/location_name"
+        style="@style/MainTextStyleDark"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
         android:layout_marginTop="20dp"
         android:text="@string/locations_smallview_first_textview"
-        style="@style/MainTextStyle"
         app:layout_constraintStart_toEndOf="@+id/location_imageview"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/location_address"
+        style="@style/SmollerTextStyleDark"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="15dp"
-        style="@style/SmolTextStyle"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="8dp"
         android:text="@string/location_smallview_second_textview"
-        app:layout_constraintWidth_percent="0.5"
         app:autoSizeTextType="uniform"
         app:layout_constraintStart_toEndOf="@+id/location_imageview"
-        app:layout_constraintTop_toBottomOf="@+id/location_name" />
+        app:layout_constraintTop_toBottomOf="@+id/location_name"
+        app:layout_constraintWidth_percent="0.5" />
 </androidx.constraintlayout.widget.ConstraintLayout>

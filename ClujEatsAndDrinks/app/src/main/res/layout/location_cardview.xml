@@ -3,6 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:screenOrientation="portrait"
     android:layout_margin="5dp">
 
     <androidx.cardview.widget.CardView
@@ -40,7 +41,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
-                style="@style/MainTextStyle"
+                style="@style/MainTextStyleDark"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/location_imageview" />
 
@@ -51,7 +52,7 @@
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
                 android:text="some title"
-                style="@style/MainTextStyle"
+                style="@style/MainTextStyleDark"
                 app:layout_constraintStart_toEndOf="@+id/location_name_label"
                 app:layout_constraintTop_toBottomOf="@+id/location_imageview" />
 
@@ -62,7 +63,7 @@
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
                 android:layout_marginBottom="8dp"
-                style="@style/SmolTextStyle"
+                style="@style/SmolTextStyleDark"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/location_name_label" />
@@ -74,7 +75,7 @@
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
                 android:text="some address"
-                style="@style/SmolTextStyle"
+                style="@style/SmolTextStyleDark"
                 app:layout_constraintStart_toEndOf="@+id/location_address_label"
                 app:layout_constraintTop_toBottomOf="@+id/location_name_label" />
 
