@@ -2,11 +2,11 @@
 
 Cluj Eats and Drinks is an Android application that can help anyone in search of a good place to eat or drink in Cluj-Napoca.
 The search is based on the type of food or beverage, time and date and retrieves all matching data. 
-Locations can also be added to favouurites and kept in the profile page.
+Locations can also be added to favourites and kept in the profile page.
 
 ## Built Using
 
-* [Firebase](https://firebase.google.com/) - Authentification, Storage and Database
+* [Firebase](https://firebase.google.com/) - Authentication, Storage and Database
 * [Glide](https://github.com/bumptech/glide) - Used for loading images
 * [Progress Button](https://github.com/dmytrodanylyk/circular-progress-button/wiki/User-Guide) - Used for various saving operations
 
