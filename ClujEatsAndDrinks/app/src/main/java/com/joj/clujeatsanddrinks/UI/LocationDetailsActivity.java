@@ -81,7 +81,7 @@ public class LocationDetailsActivity extends AppCompatActivity {
                                 @Override
                                 public void onClick(View v) {
                                     circularProgressButton.startMorphAnimation();
-                                    circularProgressButton.startAnimation();
+//                                    circularProgressButton.startAnimation();
                                     addLocationToFavourites(locationKey);
                                 }
                             });
