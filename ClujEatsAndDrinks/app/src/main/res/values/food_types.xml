@@ -5,6 +5,8 @@
         <item>Pizza</item>
         <item>Pasta</item>
         <item>Sweets</item>
+        <item>Indian</item>
+        <item>Traditional</item>
         <item>Anything</item>
     </string-array>
 </resources>

@@ -52,7 +52,7 @@
         android:layout_marginTop="20dp"
         android:layout_marginEnd="8dp"
         android:contentDescription="@string/location_details_image_description"
-        android:scaleType="center"
+        android:scaleType="centerCrop"
         android:src="@mipmap/ic_launcher"
         android:transitionName="@string/locationImageTransition"
         app:layout_constraintEnd_toEndOf="parent"
