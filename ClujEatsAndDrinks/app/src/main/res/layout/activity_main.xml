@@ -66,6 +66,26 @@
             android:layout_height="wrap_content"
             android:text="@string/create_account_button" />
 
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/googleSignInButton"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="@drawable/google_icon" />
+
+            <com.facebook.login.widget.LoginButton
+                android:id="@+id/facebookSignInButton"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="@drawable/facebook_icon" />
+        </LinearLayout>
+
+
+
         <Button
             android:id="@+id/newHereButton"
             style="@style/BorderlessButtonWithStyle"

@@ -10,6 +10,9 @@ import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.Spinner;
 
+import com.google.android.gms.auth.api.signin.GoogleSignIn;
+import com.google.android.gms.auth.api.signin.GoogleSignInClient;
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.joj.clujeatsanddrinks.MainActivity;
 import com.joj.clujeatsanddrinks.R;
 import com.google.firebase.auth.FirebaseAuth;
@@ -94,6 +97,15 @@ public class ChooseActivity extends AppCompatActivity {
                 .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
+
+                        GoogleSignInOptions options = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+                                .requestIdToken(getApplication().getString(R.string.default_web_client_id))
+                                .requestEmail()
+                                .build();
+
+                        GoogleSignInClient googleClient = GoogleSignIn.getClient(getApplication(), options);
+                        googleClient.signOut();
+
                         mAuth.signOut();
                         Intent intent = new Intent(ChooseActivity.this, MainActivity.class);
                         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);

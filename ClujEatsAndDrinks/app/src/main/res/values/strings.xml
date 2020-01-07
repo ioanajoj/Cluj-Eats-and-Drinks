@@ -43,4 +43,8 @@
     <string name="login_button">Login</string>
     <string name="create_account_button">Create account</string>
     <string name="create_account_switch_button">First time here? Create account here.</string>
+    <string name="signinwithgoogle">Sign In With Google</string>
+
+    <string name="facebook_app_id">2486359161619909</string>
+    <string name="fb_login_protocol_scheme">652de7e92dff4155f676b5bdebeec5ee</string>
 </resources>

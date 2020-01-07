@@ -50,6 +50,11 @@ dependencies {
 
     // Circular Button from https://github.com/leandroBorgesFerreira/LoadingButtonAndroid
     implementation 'br.com.simplepass:loading-button-android:2.1.0'
+    implementation 'com.google.android.gms:play-services-auth:17.0.0'
+    implementation 'com.google.android.material:material:1.0.0'
+
+    // Facebook
+    implementation 'com.facebook.android:facebook-android-sdk:5.13.0'
 }
 
 apply plugin: 'com.google.gms.google-services'
