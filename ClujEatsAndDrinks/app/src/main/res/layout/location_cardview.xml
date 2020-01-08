@@ -31,6 +31,7 @@
                 android:contentDescription="Image for each location, is set programmatically"
                 android:scaleType="center"
                 android:src="@mipmap/ic_launcher"
+                android:transitionName="@string/locationImageTransition"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />

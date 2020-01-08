@@ -30,6 +30,8 @@ import java.util.ArrayList;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.view.ViewCompat;
+
 import br.com.simplepass.loadingbutton.customViews.CircularProgressButton;
 
 public class LocationDetailsActivity extends AppCompatActivity {
@@ -40,6 +42,9 @@ public class LocationDetailsActivity extends AppCompatActivity {
     private ImageView locationImageView;
     private TextView addressTextView;
     private CircularProgressButton circularProgressButton;
+
+    public static String LOCATION_NAME_TEXTVIEW = "details:name";
+    public static String LOCATION_IMAGE_IMAGEVIEW = "details:image";
 
     // Firebase
     private FirebaseAuth mAuth;
@@ -61,6 +66,9 @@ public class LocationDetailsActivity extends AppCompatActivity {
 
         // Get info from Bundle
         String locationName = getIntent().getExtras().getString("Location Name");
+
+        ViewCompat.setTransitionName(locationNameTextView, LOCATION_NAME_TEXTVIEW);
+        ViewCompat.setTransitionName(locationImageView, LOCATION_IMAGE_IMAGEVIEW);
 
         // Get Firebase Stuff
         mAuth = FirebaseAuth.getInstance();

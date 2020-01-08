@@ -1,15 +1,19 @@
 package com.joj.clujeatsanddrinks.UI;
 
+import android.app.ActivityOptions;
 import android.content.Intent;
 import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityOptionsCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.util.Log;
+import android.util.Pair;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
@@ -101,7 +105,14 @@ public class WelcomeActivity extends AppCompatActivity {
                 Bundle mBundle = new Bundle();
                 mBundle.putString("Location Name", finalLocations.get(position).getName());
                 mIntent.putExtras(mBundle);
-                startActivity(mIntent);
+
+                ImageView locationImageView = findViewById(R.id.location_imageview);
+                TextView locationName = findViewById(R.id.location_name);
+
+                ActivityOptions options = ActivityOptions
+                        .makeSceneTransitionAnimation(WelcomeActivity.this, locationImageView, LocationDetailsActivity.LOCATION_IMAGE_IMAGEVIEW);
+
+                startActivity(mIntent, options.toBundle());
             }
         });
     }
